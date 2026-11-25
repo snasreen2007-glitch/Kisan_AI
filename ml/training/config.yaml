@@ -1,0 +1,139 @@
+# ==============================================================================
+# KisanAI Master Model Upgrade - Reproducible Training Configuration
+# Model: Hierarchical Multi-Task Agricultural Vision System
+# Champion Backbone: EfficientNetV2-S
+# ==============================================================================
+
+experiment:
+  name: "kisanai_hierarchical_efficientnetv2s_v2"
+  seed: 42
+  deterministic: true
+  output_dir: "ml/training/output"
+  checkpoint_dir: "ml/training/checkpoints"
+
+dataset:
+  manifest_path: "ml/datasets/dataset_manifest.json"
+  image_size: 256
+  crop_size: 224
+  num_workers: 4
+  splits:
+    train_ratio: 0.70
+    val_ratio: 0.15
+    test_ratio: 0.15
+    group_stratified: true
+
+backbones_benchmarked:
+  - name: "mobilenet_v3_large"
+    feature_dim: 960
+    input_size: 224
+  - name: "efficientnet_v2_b0"
+    feature_dim: 1280
+    input_size: 224
+  - name: "efficientnet_v2_s"
+    feature_dim: 1280
+    input_size: 256
+  - name: "convnext_tiny"
+    feature_dim: 768
+    input_size: 224
+  - name: "deit_small"
+    feature_dim: 384
+    input_size: 224
+
+champion_architecture:
+  name: "hierarchical_crop_vision"
+  backbone: "efficientnet_v2_s"
+  feature_dim: 1280
+  dropout_rate: 0.25
+  temperature_scaling: true
+
+hierarchy:
+  level_1_validity:
+    classes: ["invalid_ood", "valid_plant"]
+    loss_weight: 1.0
+  level_2_crop:
+    classes: ["unknown_crop", "rice", "chilli"]
+    loss_weight: 1.2
+  level_3_category:
+    classes: ["uncertain", "healthy", "disease", "pest"]
+    loss_weight: 1.2
+  level_4_rice_disease:
+    classes: ["blast", "brown_spot", "bacterial_leaf_blight", "tungro"]
+    loss_weight: 2.0
+  level_4_rice_pest:
+    classes: ["brown_planthopper", "yellow_stem_borer", "leaf_folder", "gall_midge"]
+    loss_weight: 2.0
+  level_4_chilli_disease:
+    classes: ["leaf_curl", "cercospora", "bacterial_leaf_spot", "powdery_mildew", "anthracnose"]
+    loss_weight: 2.0
+  level_4_chilli_pest:
+    classes: ["thrips", "mites", "whitefly", "aphids"]
+    loss_weight: 2.0
+
+training_strategy:
+  phase_1_warmup_heads:
+    epochs: 5
+    lr_heads: 1.0e-3
+    lr_backbone: 0.0
+    weight_decay: 1.0e-4
+  phase_2_joint_fine_tuning:
+    epochs: 40
+    lr_heads: 5.0e-4
+    lr_backbone: 1.0e-4
+    lr_scheduler: "cosine_annealing"
+    min_lr: 1.0e-6
+    weight_decay: 1.0e-4
+    early_stopping_patience: 8
+
+loss_formulation:
+  type: "class_balanced_focal_loss"
+  focal_gamma: 2.0
+  focal_alpha: 0.25
+  label_smoothing: 0.10
+
+hard_example_mining:
+  enabled: true
+  min_confidence_margin: 0.15
+  focal_multiplier_confused_pairs: 2.5
+  monitored_pairs:
+    - ["rice_blast", "rice_brown_spot"]
+    - ["rice_bacterial_leaf_blight", "rice_healthy"]
+    - ["chilli_leaf_curl", "chilli_thrips"]
+    - ["chilli_thrips", "chilli_mites"]
+    - ["chilli_whitefly", "chilli_aphids"]
+    - ["chilli_bacterial_leaf_spot", "chilli_cercospora"]
+
+data_augmentation:
+  random_resized_crop:
+    scale: [0.75, 1.0]
+    ratio: [0.85, 1.15]
+  horizontal_flip_prob: 0.50
+  vertical_flip_prob: 0.20
+  rotation_degrees: 15
+  perspective_distortion_prob: 0.10
+  color_jitter:
+    brightness: 0.15
+    contrast: 0.15
+    saturation: 0.15
+    hue: 0.05
+  gaussian_blur_prob: 0.15
+  motion_blur_prob: 0.10
+  cutmix_prob: 0.25
+  mixup_prob: 0.20
+
+uncertainty_and_calibration:
+  temperature_scaling: true
+  ood_entropy_threshold: 1.15
+  min_acceptance_confidence: 0.70
+  abstention_message: "Visual evidence insufficient or ambiguous. Please capture a clear, well-lit photograph focusing directly on the leaf lesion or pest specimen."
+
+export_targets:
+  executorch:
+    enabled: true
+    backend: "xnnpack"
+    quantization: "fp32_and_int8"
+    target_path: "ml/export/output/hierarchical_crop_vision_efficientnetv2s.ep"
+  torchscript:
+    enabled: true
+    target_path: "ml/export/output/hierarchical_crop_vision_efficientnetv2s.pt"
+  android_assets_path: "android/app/src/main/assets/models/"
+

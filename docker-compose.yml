@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  kisan-ai-vision:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: kisan-ai-vision-server
+    ports:
+      - "8000:8000"
+    restart: unless-stopped
+    environment:
+      - PORT=8000
+
+  ollama:
+    image: ollama/ollama:latest
+    container_name: kisan-ai-ollama
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama_data:/root/.ollama
+    restart: unless-stopped
+
+volumes:
+  ollama_data:
+

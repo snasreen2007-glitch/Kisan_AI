@@ -1,0 +1,22 @@
+{
+  "dataset": "Paddy Doctor (Tamil Nadu, India)",
+  "classes": [
+    "blast",
+    "brown_spot",
+    "bacterial_leaf_blight",
+    "tungro",
+    "hispa",
+    "leaf_roller",
+    "stem_borer",
+    "downy_mildew",
+    "bacterial_leaf_streak",
+    "normal"
+  ],
+  "input_resolution": [
+    3,
+    224,
+    224
+  ],
+  "exported_at": "2026-11-16T01:43:42Z",
+  "validation_accuracy": 63.064516129032256
+}

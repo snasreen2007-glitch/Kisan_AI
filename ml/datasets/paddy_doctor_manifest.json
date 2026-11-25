@@ -1,0 +1,24 @@
+{
+  "dataset_name": "Paddy Doctor",
+  "origin": "Tirunelveli, Tamil Nadu, India (CAT S62 Pro Smartphone)",
+  "source_repo": "https://github.com/paddydoc/paddy-doctor-dataset.git",
+  "license": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+  "citation": "Dhanalakshmi, P., et al. 'Paddy Doctor: Large-scale visual dataset for paddy leaf disease identification.'",
+  "total_catalogued_images": 16225,
+  "classes_mapped": {
+    "blast": "blast",
+    "brown_spot": "brown_spot",
+    "bacterial_leaf_blight": "bacterial_leaf_blight",
+    "tungro": "tungro",
+    "yellow_stem_borer": "stem_borer",
+    "white_stem_borer": "stem_borer",
+    "black_stem_borer": "stem_borer",
+    "leaf_roller": "leaf_folder",
+    "normal": "healthy",
+    "hispa": "hispa",
+    "downy_mildew": "downy_mildew",
+    "bacterial_leaf_streak": "bacterial_leaf_streak",
+    "bacterial_panicle_blight": "panicle_blight"
+  },
+  "target_directory": "C:\\Users\\ayubh\\OneDrive\\Desktop\\remix-of-remix-of-make-it-great\\ml\\datasets\\data\\rice"
+}

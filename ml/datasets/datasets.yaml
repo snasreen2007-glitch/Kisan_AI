@@ -1,0 +1,97 @@
+"""
+Dataset Registry & Provenance Manifest
+Tracks verified agricultural datasets, licensing, original counts, provenance, and inclusion status.
+"""
+
+import os
+import yaml
+
+DATASET_REGISTRY = {
+    "version": "2.0.0",
+    "updated_at": "2026-11-20",
+    "target_crops": ["Rice (Oryza sativa)", "Chilli (Capsicum annuum)"],
+    "target_geography": ["Andhra Pradesh", "Telangana", "South India"],
+    "datasets": [
+        {
+            "id": "digital_green_india",
+            "name": "Digital Green Real Smallholder Farmer Field Dataset",
+            "source_url": "https://huggingface.co/datasets/DigiGreen/Crop_Disease_Images",
+            "license": "CC-BY-4.0",
+            "commercial_use": True,
+            "provenance": "Smallholder farmer field captures across Andhra Pradesh, Telangana, Bihar; expert agronomic annotations",
+            "original_image_count": 989,
+            "augmented_image_count": 0,
+            "synthetic_samples": 0,
+            "chilli_images": 124,
+            "rice_images": 19,
+            "annotated_classes": [
+                "Leaf Curl Virus",
+                "Thrips",
+                "Leaf Curl Virus; Thrips (Co-infestation)",
+                "Mites",
+                "Anthracnose",
+                "Healthy",
+                "Blast",
+                "Stem Borer",
+                "Sheath Blight"
+            ],
+            "status": "APPROVED_ACTIVE_EVAL_AND_TRAIN",
+            "notes": "Gold standard for Andhra Pradesh & Telangana Chilli pest vs viral curling distinction."
+        },
+        {
+            "id": "paddy_doctor_real_field",
+            "name": "Paddy Doctor Real Field Dataset",
+            "source_url": "https://paddydoc.github.io/dataset/",
+            "license": "CC-BY-NC-SA-4.0 / Academic Open Access",
+            "commercial_use": False,
+            "provenance": "16,225 actual paddy field photographs collected by Tamil Nadu Agricultural University (TNAU)",
+            "original_image_count": 16225,
+            "augmented_image_count": 0,
+            "synthetic_samples": 0,
+            "annotated_classes": [
+                "blast",
+                "brown_spot",
+                "bacterial_leaf_blight",
+                "bacterial_leaf_streak",
+                "tungro",
+                "hispa",
+                "downy_mildew",
+                "stem_borer",
+                "bacterial_panicle_blight",
+                "normal"
+            ],
+            "status": "APPROVED_ACTIVE_RICE_TRAINING",
+            "notes": "Verified field photographs of natural rice foliage across South Indian kharif and rabi conditions."
+        },
+        {
+            "id": "cold_chilli_leaf_dataset",
+            "name": "Chili and Onion Leaf Dataset (COLD)",
+            "source_url": "https://huggingface.co/datasets/Project-AgML/COLD_chili_leaf_disease_classification",
+            "license": "CC-BY-NC-4.0",
+            "commercial_use": False,
+            "provenance": "Laboratory and field captures in Sri Lanka / South Asia",
+            "original_image_count": 532,
+            "augmented_image_count": 11000,
+            "synthetic_samples": 0,
+            "annotated_classes": [
+                "cercospora",
+                "healthy",
+                "mites_and_trips (CONFLATED)",
+                "nutritional",
+                "powdery mildew"
+            ],
+            "status": "RESTRICTED_REFERENCE_ONLY",
+            "notes": "Label 2 conflates mites and thrips into single class; must NOT be used as sole source for species classification."
+        }
+    ]
+}
+
+def save_manifest():
+    out_path = "ml/datasets/datasets.yaml"
+    with open(out_path, "w", encoding="utf-8") as f:
+        yaml.dump(DATASET_REGISTRY, f, sort_keys=False, indent=2)
+    print(f"Saved dataset registry manifest -> {out_path}")
+
+if __name__ == "__main__":
+    save_manifest()
+

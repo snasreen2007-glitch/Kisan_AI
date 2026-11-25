@@ -1,0 +1,535 @@
+{
+  "total_testcases": 21,
+  "correct_predictions": 17,
+  "accuracy_percent": 80.95,
+  "avg_latency_ms": 391.6,
+  "dataset": "Paddy Doctor Real Field Photos",
+  "timestamp": "2026-11-19T18:57:28Z",
+  "cases": [
+    {
+      "case_id": 1,
+      "filename": "paddy_doc_p2_01987.jpg",
+      "relative_path": "ml/datasets/data/paddy_doctor_raw/normal/paddy_doc_p2_01987.jpg",
+      "ground_truth": "rice-healthy",
+      "predicted": "bacterial-leaf-blight",
+      "confidence": 0.4162,
+      "match": false,
+      "latency_ms": 4157.0,
+      "top_candidates": [
+        {
+          "slug": "bacterial-leaf-blight",
+          "confidence": 0.4162
+        },
+        {
+          "slug": "rice-healthy",
+          "confidence": 0.2423
+        },
+        {
+          "slug": "downy-mildew",
+          "confidence": 0.1219
+        }
+      ],
+      "outcome": "identified"
+    },
+    {
+      "case_id": 2,
+      "filename": "paddy_doc_p2_04112.jpg",
+      "relative_path": "ml/datasets/data/paddy_doctor_raw/bacterial_leaf_streak/paddy_doc_p2_04112.jpg",
+      "ground_truth": "bacterial-leaf-streak",
+      "predicted": "bacterial-leaf-streak",
+      "confidence": 0.9957,
+      "match": true,
+      "latency_ms": 247.1,
+      "top_candidates": [
+        {
+          "slug": "bacterial-leaf-streak",
+          "confidence": 0.9957
+        },
+        {
+          "slug": "yellow-stem-borer",
+          "confidence": 0.0014
+        },
+        {
+          "slug": "rice-blast",
+          "confidence": 0.0009
+        }
+      ],
+      "outcome": "identified"
+    },
+    {
+      "case_id": 3,
+      "filename": "paddy_doc_p2_00612.jpg",
+      "relative_path": "ml/datasets/data/paddy_doctor_raw/blast/paddy_doc_p2_00612.jpg",
+      "ground_truth": "rice-blast",
+      "predicted": "hispa",
+      "confidence": 0.3706,
+      "match": false,
+      "latency_ms": 109.5,
+      "top_candidates": [
+        {
+          "slug": "hispa",
+          "confidence": 0.3706
+        },
+        {
+          "slug": "brown-spot",
+          "confidence": 0.2817
+        },
+        {
+          "slug": "rice-blast",
+          "confidence": 0.2798
+        }
+      ],
+      "outcome": "identified"
+    },
+    {
+      "case_id": 4,
+      "filename": "paddy_doc_04906.jpg",
+      "relative_path": "ml/datasets/data/paddy_doctor_raw/downy_mildew/paddy_doc_04906.jpg",
+      "ground_truth": "downy-mildew",
+      "predicted": "downy-mildew",
+      "confidence": 0.9943,
+      "match": true,
+      "latency_ms": 185.1,
+      "top_candidates": [
+        {
+          "slug": "downy-mildew",
+          "confidence": 0.9943
+        },
+        {
+          "slug": "rice-blast",
+          "confidence": 0.0023
+        },
+        {
+          "slug": "yellow-stem-borer",
+          "confidence": 0.0008
+        }
+      ],
+      "outcome": "identified"
+    },
+    {
+      "case_id": 5,
+      "filename": "paddy_doc_p2_00171.jpg",
+      "relative_path": "ml/datasets/data/paddy_doctor_raw/downy_mildew/paddy_doc_p2_00171.jpg",
+      "ground_truth": "downy-mildew",
+      "predicted": "downy-mildew",
+      "confidence": 0.9424,
+      "match": true,
+      "latency_ms": 217.4,
+      "top_candidates": [
+        {
+          "slug": "downy-mildew",
+          "confidence": 0.9424
+        },
+        {
+          "slug": "bacterial-leaf-streak",
+          "confidence": 0.016
+        },
+        {
+          "slug": "yellow-stem-borer",
+          "confidence": 0.0155
+        }
+      ],
+      "outcome": "identified"
+    },
+    {
+      "case_id": 6,
+      "filename": "paddy_doc_p2_02018.jpg",
+      "relative_path": "ml/datasets/data/paddy_doctor_raw/normal/paddy_doc_p2_02018.jpg",
+      "ground_truth": "rice-healthy",
+      "predicted": "rice-healthy",
+      "confidence": 0.9684,
+      "match": true,
+      "latency_ms": 131.0,
+      "top_candidates": [
+        {
+          "slug": "rice-healthy",
+          "confidence": 0.9684
+        },
+        {
+          "slug": "yellow-stem-borer",
+          "confidence": 0.0147
+        },
+        {
+          "slug": "downy-mildew",
+          "confidence": 0.0076
+        }
+      ],
+      "outcome": "identified"
+    },
+    {
+      "case_id": 7,
+      "filename": "paddy_doc_02315.jpg",
+      "relative_path": "ml/datasets/data/paddy_doctor_raw/brown_spot/paddy_doc_02315.jpg",
+      "ground_truth": "brown-spot",
+      "predicted": "brown-spot",
+      "confidence": 0.549,
+      "match": true,
+      "latency_ms": 156.4,
+      "top_candidates": [
+        {
+          "slug": "brown-spot",
+          "confidence": 0.549
+        },
+        {
+          "slug": "yellow-stem-borer",
+          "confidence": 0.1886
+        },
+        {
+          "slug": "rice-blast",
+          "confidence": 0.15
+        }
+      ],
+      "outcome": "identified"
+    },
+    {
+      "case_id": 8,
+      "filename": "paddy_doc_03525.jpg",
+      "relative_path": "ml/datasets/data/paddy_doctor_raw/hispa/paddy_doc_03525.jpg",
+      "ground_truth": "hispa",
+      "predicted": "hispa",
+      "confidence": 0.8911,
+      "match": true,
+      "latency_ms": 217.1,
+      "top_candidates": [
+        {
+          "slug": "hispa",
+          "confidence": 0.8911
+        },
+        {
+          "slug": "bacterial-leaf-blight",
+          "confidence": 0.103
+        },
+        {
+          "slug": "tungro",
+          "confidence": 0.0016
+        }
+      ],
+      "outcome": "identified"
+    },
+    {
+      "case_id": 9,
+      "filename": "paddy_doc_p2_00358.jpg",
+      "relative_path": "ml/datasets/data/paddy_doctor_raw/blast/paddy_doc_p2_00358.jpg",
+      "ground_truth": "rice-blast",
+      "predicted": "rice-blast",
+      "confidence": 0.9904,
+      "match": true,
+      "latency_ms": 141.5,
+      "top_candidates": [
+        {
+          "slug": "rice-blast",
+          "confidence": 0.9904
+        },
+        {
+          "slug": "bacterial-leaf-streak",
+          "confidence": 0.0024
+        },
+        {
+          "slug": "yellow-stem-borer",
+          "confidence": 0.0022
+        }
+      ],
+      "outcome": "identified"
+    },
+    {
+      "case_id": 10,
+      "filename": "paddy_doc_00119.jpg",
+      "relative_path": "ml/datasets/data/paddy_doctor_raw/stem_borer/paddy_doc_00119.jpg",
+      "ground_truth": "yellow-stem-borer",
+      "predicted": "yellow-stem-borer",
+      "confidence": 0.9373,
+      "match": true,
+      "latency_ms": 347.7,
+      "top_candidates": [
+        {
+          "slug": "yellow-stem-borer",
+          "confidence": 0.9373
+        },
+        {
+          "slug": "tungro",
+          "confidence": 0.0521
+        },
+        {
+          "slug": "rice-blast",
+          "confidence": 0.0027
+        }
+      ],
+      "outcome": "identified"
+    },
+    {
+      "case_id": 11,
+      "filename": "paddy_doc_02270.jpg",
+      "relative_path": "ml/datasets/data/paddy_doctor_raw/brown_spot/paddy_doc_02270.jpg",
+      "ground_truth": "brown-spot",
+      "predicted": "brown-spot",
+      "confidence": 0.8234,
+      "match": true,
+      "latency_ms": 119.8,
+      "top_candidates": [
+        {
+          "slug": "brown-spot",
+          "confidence": 0.8234
+        },
+        {
+          "slug": "downy-mildew",
+          "confidence": 0.0837
+        },
+        {
+          "slug": "hispa",
+          "confidence": 0.069
+        }
+      ],
+      "outcome": "identified"
+    },
+    {
+      "case_id": 12,
+      "filename": "paddy_doc_p2_04423.jpg",
+      "relative_path": "ml/datasets/data/paddy_doctor_raw/tungro/paddy_doc_p2_04423.jpg",
+      "ground_truth": "tungro",
+      "predicted": "tungro",
+      "confidence": 0.8992,
+      "match": true,
+      "latency_ms": 140.8,
+      "top_candidates": [
+        {
+          "slug": "tungro",
+          "confidence": 0.8992
+        },
+        {
+          "slug": "rice-blast",
+          "confidence": 0.0371
+        },
+        {
+          "slug": "yellow-stem-borer",
+          "confidence": 0.0207
+        }
+      ],
+      "outcome": "identified"
+    },
+    {
+      "case_id": 13,
+      "filename": "paddy_doc_p2_00373.jpg",
+      "relative_path": "ml/datasets/data/paddy_doctor_raw/blast/paddy_doc_p2_00373.jpg",
+      "ground_truth": "rice-blast",
+      "predicted": "rice-blast",
+      "confidence": 0.9778,
+      "match": true,
+      "latency_ms": 134.1,
+      "top_candidates": [
+        {
+          "slug": "rice-blast",
+          "confidence": 0.9778
+        },
+        {
+          "slug": "downy-mildew",
+          "confidence": 0.0125
+        },
+        {
+          "slug": "tungro",
+          "confidence": 0.0048
+        }
+      ],
+      "outcome": "identified"
+    },
+    {
+      "case_id": 14,
+      "filename": "paddy_doc_p2_03787.jpg",
+      "relative_path": "ml/datasets/data/paddy_doctor_raw/bacterial_leaf_streak/paddy_doc_p2_03787.jpg",
+      "ground_truth": "bacterial-leaf-streak",
+      "predicted": "bacterial-leaf-streak",
+      "confidence": 0.987,
+      "match": true,
+      "latency_ms": 111.0,
+      "top_candidates": [
+        {
+          "slug": "bacterial-leaf-streak",
+          "confidence": 0.987
+        },
+        {
+          "slug": "downy-mildew",
+          "confidence": 0.0074
+        },
+        {
+          "slug": "yellow-stem-borer",
+          "confidence": 0.0026
+        }
+      ],
+      "outcome": "identified"
+    },
+    {
+      "case_id": 15,
+      "filename": "paddy_doc_p2_01986.jpg",
+      "relative_path": "ml/datasets/data/paddy_doctor_raw/normal/paddy_doc_p2_01986.jpg",
+      "ground_truth": "rice-healthy",
+      "predicted": "downy-mildew",
+      "confidence": 0.471,
+      "match": false,
+      "latency_ms": 115.7,
+      "top_candidates": [
+        {
+          "slug": "downy-mildew",
+          "confidence": 0.471
+        },
+        {
+          "slug": "hispa",
+          "confidence": 0.223
+        },
+        {
+          "slug": "rice-healthy",
+          "confidence": 0.1273
+        }
+      ],
+      "outcome": "identified"
+    },
+    {
+      "case_id": 16,
+      "filename": "paddy_doc_01850.jpg",
+      "relative_path": "ml/datasets/data/paddy_doctor_raw/bacterial_leaf_blight/paddy_doc_01850.jpg",
+      "ground_truth": "bacterial-leaf-blight",
+      "predicted": "bacterial-leaf-blight",
+      "confidence": 0.8194,
+      "match": true,
+      "latency_ms": 173.3,
+      "top_candidates": [
+        {
+          "slug": "bacterial-leaf-blight",
+          "confidence": 0.8194
+        },
+        {
+          "slug": "tungro",
+          "confidence": 0.1299
+        },
+        {
+          "slug": "downy-mildew",
+          "confidence": 0.0151
+        }
+      ],
+      "outcome": "identified"
+    },
+    {
+      "case_id": 17,
+      "filename": "paddy_doc_03439.jpg",
+      "relative_path": "ml/datasets/data/paddy_doctor_raw/hispa/paddy_doc_03439.jpg",
+      "ground_truth": "hispa",
+      "predicted": "rice-healthy",
+      "confidence": 0.696,
+      "match": false,
+      "latency_ms": 465.8,
+      "top_candidates": [
+        {
+          "slug": "rice-healthy",
+          "confidence": 0.696
+        },
+        {
+          "slug": "bacterial-leaf-blight",
+          "confidence": 0.1534
+        },
+        {
+          "slug": "hispa",
+          "confidence": 0.0526
+        }
+      ],
+      "outcome": "identified"
+    },
+    {
+      "case_id": 18,
+      "filename": "paddy_doc_p2_04373.jpg",
+      "relative_path": "ml/datasets/data/paddy_doctor_raw/tungro/paddy_doc_p2_04373.jpg",
+      "ground_truth": "tungro",
+      "predicted": "tungro",
+      "confidence": 0.9785,
+      "match": true,
+      "latency_ms": 152.5,
+      "top_candidates": [
+        {
+          "slug": "tungro",
+          "confidence": 0.9785
+        },
+        {
+          "slug": "brown-spot",
+          "confidence": 0.0061
+        },
+        {
+          "slug": "hispa",
+          "confidence": 0.0054
+        }
+      ],
+      "outcome": "identified"
+    },
+    {
+      "case_id": 19,
+      "filename": "paddy_doc_01893.jpg",
+      "relative_path": "ml/datasets/data/paddy_doctor_raw/bacterial_leaf_blight/paddy_doc_01893.jpg",
+      "ground_truth": "bacterial-leaf-blight",
+      "predicted": "bacterial-leaf-blight",
+      "confidence": 0.9769,
+      "match": true,
+      "latency_ms": 173.6,
+      "top_candidates": [
+        {
+          "slug": "bacterial-leaf-blight",
+          "confidence": 0.9769
+        },
+        {
+          "slug": "yellow-stem-borer",
+          "confidence": 0.0098
+        },
+        {
+          "slug": "brown-spot",
+          "confidence": 0.004
+        }
+      ],
+      "outcome": "identified"
+    },
+    {
+      "case_id": 20,
+      "filename": "paddy_doc_00111.jpg",
+      "relative_path": "ml/datasets/data/paddy_doctor_raw/stem_borer/paddy_doc_00111.jpg",
+      "ground_truth": "yellow-stem-borer",
+      "predicted": "yellow-stem-borer",
+      "confidence": 0.9826,
+      "match": true,
+      "latency_ms": 267.8,
+      "top_candidates": [
+        {
+          "slug": "yellow-stem-borer",
+          "confidence": 0.9826
+        },
+        {
+          "slug": "rice-healthy",
+          "confidence": 0.012
+        },
+        {
+          "slug": "rice-blast",
+          "confidence": 0.0017
+        }
+      ],
+      "outcome": "identified"
+    },
+    {
+      "case_id": 21,
+      "filename": "paddy_doc_02585.jpg",
+      "relative_path": "ml/datasets/data/paddy_doctor_raw/brown_spot/paddy_doc_02585.jpg",
+      "ground_truth": "brown-spot",
+      "predicted": "brown-spot",
+      "confidence": 0.9813,
+      "match": true,
+      "latency_ms": 458.5,
+      "top_candidates": [
+        {
+          "slug": "brown-spot",
+          "confidence": 0.9813
+        },
+        {
+          "slug": "bacterial-leaf-blight",
+          "confidence": 0.0086
+        },
+        {
+          "slug": "tungro",
+          "confidence": 0.0043
+        }
+      ],
+      "outcome": "identified"
+    }
+  ]
+}

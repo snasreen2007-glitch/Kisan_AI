@@ -1,0 +1,44 @@
+{
+  "model_name": "Chilli Disease & Pest MobileNetV3-Small",
+  "architecture": "MobileNetV3-Small",
+  "crop": "chilli",
+  "input_shape": [
+    1,
+    3,
+    224,
+    224
+  ],
+  "preprocessing": {
+    "resize": [
+      224,
+      224
+    ],
+    "mean": [
+      0.485,
+      0.456,
+      0.406
+    ],
+    "std": [
+      0.229,
+      0.224,
+      0.225
+    ]
+  },
+  "classes": [
+    "chilli_leaf_curl",
+    "chilli_cercospora_leaf_spot",
+    "chilli_bacterial_leaf_spot",
+    "chilli_powdery_mildew",
+    "chilli_anthracnose_fruit_rot",
+    "chilli_thrips",
+    "chilli_mites",
+    "chilli_whiteflies",
+    "chilli_aphids",
+    "chilli_healthy",
+    "unknown"
+  ],
+  "num_classes": 11,
+  "confidence_threshold": 0.58,
+  "calibrated_temperature": 1.0,
+  "target_runtime": "ExecuTorch + XNNPACK / PyTorch Mobile (Android)"
+}

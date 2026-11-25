@@ -1,0 +1,161 @@
+/*
+ * Tailwind v4 entry. Keep every @import in this top block. Remote fonts load via <link> in __root.tsx.
+ */
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is([data-theme="dark"] *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-subtle: var(--subtle);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-canvas: var(--canvas);
+  --color-surface: var(--surface-raised);
+  --color-line: var(--line-soft);
+  --color-amber: var(--field-amber);
+  --color-coral: var(--field-coral);
+  --color-leaf: var(--field-green);
+  --color-leaf-soft: var(--field-green-soft);
+  --color-leaf-deep: var(--field-green-deep);
+  --shadow-forest: var(--forest-shadow);
+  --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", "Manrope", "Noto Sans Devanagari", "Noto Sans Telugu", system-ui, sans-serif;
+  --font-apple: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", "Inter", sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+}
+
+/* Dark-first palette (brand spec). */
+:root {
+  color-scheme: dark;
+  --radius: 0.75rem;
+  --canvas: oklch(0.153 0.009 169.3);
+  --background: oklch(0.186 0.015 162.9);
+  --foreground: oklch(0.973 0.005 145.5);
+  --card: oklch(0.214 0.019 158);
+  --card-foreground: oklch(0.973 0.005 145.5);
+  --popover: oklch(0.246 0.023 155.2);
+  --popover-foreground: oklch(0.973 0.005 145.5);
+  --surface-raised: oklch(0.246 0.023 155.2);
+  --primary: oklch(0.785 0.157 154.7);
+  --primary-foreground: oklch(0.17 0.02 160);
+  --secondary: oklch(0.246 0.023 155.2);
+  --secondary-foreground: oklch(0.973 0.005 145.5);
+  --muted: oklch(0.23 0.02 157);
+  --muted-foreground: oklch(0.748 0.019 155.7);
+  --subtle: oklch(0.62 0.022 159.3);
+  --accent: oklch(0.27 0.026 155);
+  --accent-foreground: oklch(0.973 0.005 145.5);
+  --destructive: oklch(0.697 0.133 25.5);
+  --destructive-foreground: oklch(0.17 0.02 25);
+  --border: oklch(0.312 0.027 155.4);
+  --input: oklch(0.34 0.027 155.4);
+  --ring: oklch(0.785 0.157 154.7);
+  --line-soft: oklch(0.312 0.027 155.4 / 70%);
+  --field-amber: oklch(0.807 0.122 80.3);
+  --field-coral: oklch(0.697 0.133 25.5);
+  --field-green: oklch(0.785 0.157 154.7);
+  --field-green-soft: oklch(0.876 0.089 155.2);
+  --field-green-deep: oklch(0.665 0.142 157.2);
+  --forest-shadow: 0 24px 60px oklch(0.05 0.01 160 / 45%);
+}
+
+:root[data-theme="light"] {
+  color-scheme: light;
+  --canvas: oklch(0.968 0.008 150);
+  --background: oklch(0.985 0.005 150);
+  --foreground: oklch(0.22 0.022 160);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.22 0.022 160);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.22 0.022 160);
+  --surface-raised: oklch(0.945 0.014 152);
+  --primary: oklch(0.52 0.13 156);
+  --primary-foreground: oklch(0.99 0.005 150);
+  --secondary: oklch(0.94 0.014 152);
+  --secondary-foreground: oklch(0.25 0.025 160);
+  --muted: oklch(0.95 0.01 152);
+  --muted-foreground: oklch(0.44 0.022 158);
+  --subtle: oklch(0.55 0.02 158);
+  --accent: oklch(0.93 0.03 155);
+  --accent-foreground: oklch(0.22 0.022 160);
+  --destructive: oklch(0.55 0.17 27);
+  --destructive-foreground: oklch(0.99 0.005 27);
+  --border: oklch(0.88 0.015 155);
+  --input: oklch(0.85 0.016 155);
+  --ring: oklch(0.52 0.13 156);
+  --line-soft: oklch(0.9 0.013 155);
+  --field-amber: oklch(0.6 0.13 70);
+  --field-coral: oklch(0.55 0.16 27);
+  --field-green: oklch(0.52 0.13 156);
+  --field-green-soft: oklch(0.42 0.1 156);
+  --field-green-deep: oklch(0.45 0.12 157);
+  --forest-shadow: 0 18px 44px oklch(0.3 0.03 160 / 10%);
+}
+
+@layer base {
+  * { border-color: var(--color-border); }
+  body { background-color: var(--color-canvas); color: var(--color-foreground); }
+}
+
+:root {
+  --safe-top: max(env(safe-area-inset-top, 0px), var(--sat, 0px));
+  --safe-bottom: max(env(safe-area-inset-bottom, 0px), var(--sab, 0px));
+  font-family: var(--font-sans);
+  font-optical-sizing: auto;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body { min-width: 320px; min-height: 100vh; margin: 0; }
+button, input, textarea, select { font: inherit; }
+button { color: inherit; }
+:where(a, button, input, textarea, select, [tabindex]):focus-visible { outline: 2px solid var(--ring); outline-offset: 3px; }
+
+/* App-wide helpers only; layouts live in Tailwind utilities. */
+.font-apple {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", "Inter", sans-serif;
+  letter-spacing: -0.03em;
+}
+.visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; clip-path: inset(50%); }
+.no-scrollbar { scrollbar-width: none; }
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.image-scrim { background: linear-gradient(0deg, oklch(0.1 0.02 160 / 88%), oklch(0.1 0.02 160 / 35%) 55%, oklch(0.1 0.02 160 / 5%)); }
+.on-image { color: oklch(0.97 0.006 145); }
+.on-image-muted { color: oklch(0.92 0.012 145 / 82%); }
+.hero-glow { background: radial-gradient(120% 80% at 100% 0%, oklch(0.785 0.157 154.7 / 14%), transparent 60%); }
+@keyframes drift { 0%, 100% { transform: translate3d(0, 0, 0); } 50% { transform: translate3d(0, -10px, 0); } }
+.animate-drift { animation: drift 9s ease-in-out infinite; }
+@keyframes scanline { 0% { transform: translateY(-100%); } 100% { transform: translateY(100%); } }
+.animate-scanline { animation: scanline 2.4s ease-in-out infinite; }
+@media print {
+  .no-print { display: none !important; }
+  body { background: white; }
+}
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; } }

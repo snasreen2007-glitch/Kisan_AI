@@ -1,0 +1,44 @@
+{
+  "model_name": "Rice Disease & Pest MobileNetV3-Small",
+  "architecture": "MobileNetV3-Small",
+  "crop": "rice",
+  "input_shape": [
+    1,
+    3,
+    224,
+    224
+  ],
+  "preprocessing": {
+    "resize": [
+      224,
+      224
+    ],
+    "mean": [
+      0.485,
+      0.456,
+      0.406
+    ],
+    "std": [
+      0.229,
+      0.224,
+      0.225
+    ]
+  },
+  "classes": [
+    "rice_blast_leaf",
+    "rice_blast_neck",
+    "rice_brown_spot",
+    "rice_bacterial_leaf_blight",
+    "rice_tungro",
+    "rice_brown_planthopper",
+    "rice_yellow_stem_borer",
+    "rice_leaf_folder",
+    "rice_gall_midge",
+    "rice_healthy",
+    "unknown"
+  ],
+  "num_classes": 11,
+  "confidence_threshold": 0.58,
+  "calibrated_temperature": 1.0,
+  "target_runtime": "ExecuTorch + XNNPACK / PyTorch Mobile (Android)"
+}

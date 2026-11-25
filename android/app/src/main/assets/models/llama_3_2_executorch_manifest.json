@@ -1,0 +1,23 @@
+{
+  "model_id": "meta-llama/Llama-3.2-1B-Instruct",
+  "runtime": "ExecuTorch Android (org.pytorch.executorch)",
+  "quantization": {
+    "weight_dtype": "int4",
+    "activation_dtype": "fp32",
+    "group_size": 128,
+    "quant_scheme": "symmetric_per_channel"
+  },
+  "target_backends": [
+    "XNNPACK",
+    "ARM KleidiAI"
+  ],
+  "prompt_template": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\n{system_prompt}<|eot_id|><|start_header_id|>user<|end_header_id|>\n\n{user_prompt}<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+  "grounding_source": "SQLite crop_care.db (ICAR, ANGRAU, PJTSAU, CIB&RC)",
+  "supported_languages": [
+    "en",
+    "hi",
+    "te"
+  ],
+  "safety_gate": "CIB&RC Statutory Compliance Layer",
+  "output_artifact": "llama_3_2_1b_instruct_q4.pte"
+}

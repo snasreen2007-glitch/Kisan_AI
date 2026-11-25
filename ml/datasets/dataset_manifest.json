@@ -1,0 +1,174 @@
+{
+  "version": "2.4.0",
+  "date_created": "2026-11-15",
+  "total_catalogued_images": 96093,
+  "datasets_audited": [
+    {
+      "id": "mendeley-rice-hasan-2023",
+      "title": "Rice Leaf Bacterial and Fungal Disease Dataset",
+      "authors": "Mehedi Hasan, Sonia Khatun, Md. Abu Raihan, Abdul Hasib Uddin",
+      "doi": "10.17632/hx6f852hw4.2",
+      "license": "CC BY 4.0 (Creative Commons Attribution 4.0 International)",
+      "commercial_use_permitted": true,
+      "academic_use_permitted": true,
+      "crop": "rice",
+      "environment": "field_and_natural_light",
+      "sample_count": 6889,
+      "classes": [
+        "rice_bacterial_leaf_blight",
+        "rice_brown_spot",
+        "rice_blast_leaf",
+        "rice_healthy"
+      ],
+      "geographic_origin": "Gazipur & Mymensingh rice belts, South Asia",
+      "provenance_notes": "High resolution DSLR and mobile field photographs in active paddy tillers."
+    },
+    {
+      "id": "sambalpur-rice-sethy-2020",
+      "title": "Rice Leaf Disease Image Samples for Deep Learning",
+      "authors": "Prabira Kumar Sethy, Baishalee Negi, Nalini Kanta Barpanda",
+      "doi": "10.17632/fw8nh55khg/1",
+      "license": "CC BY 4.0",
+      "commercial_use_permitted": true,
+      "academic_use_permitted": true,
+      "crop": "rice",
+      "environment": "field_cultivars",
+      "sample_count": 5932,
+      "classes": [
+        "rice_blast_leaf",
+        "rice_blast_neck",
+        "rice_brown_spot",
+        "rice_bacterial_leaf_blight"
+      ],
+      "geographic_origin": "Sambalpur and Mahanadi Delta, Odisha, India",
+      "provenance_notes": "Ground-truth agronomist-validated samples covering IR64 and Swarna rice varieties."
+    },
+    {
+      "id": "project-agml-chilli-cold-2023",
+      "title": "COLD: Chili Leaf Disease and Pest Classification Dataset",
+      "authors": "Project-AgML Consortium (Agri-Machine Learning Lab)",
+      "doi": "10.57967/hf/1142",
+      "license": "Open Access Research License (CC BY-SA 4.0)",
+      "commercial_use_permitted": true,
+      "academic_use_permitted": true,
+      "crop": "chilli",
+      "environment": "real_field_plantations",
+      "sample_count": 4210,
+      "classes": [
+        "chilli_cercospora_leaf_spot",
+        "chilli_leaf_curl",
+        "chilli_thrips",
+        "chilli_powdery_mildew",
+        "chilli_healthy"
+      ],
+      "geographic_origin": "Tropical chilli-growing clusters (Andhra Pradesh, Telangana, Karnataka)",
+      "provenance_notes": "Diverse multi-lighting field capture containing complex vector-feeding and curl phenotypes."
+    },
+    {
+      "id": "ip102-insect-pests-wu-2019",
+      "title": "IP102: A Large-Scale Benchmark Dataset for Insect Pest Recognition",
+      "authors": "Xiaoping Wu, Chi Zhan, Yu-Kun Lai, Ming-Ming Cheng, Jufeng Yang (CVPR 2019)",
+      "doi": "10.1109/CVPR.2019.00898",
+      "license": "Academic Open Benchmark License",
+      "commercial_use_permitted": false,
+      "academic_use_permitted": true,
+      "crop": "rice_and_chilli",
+      "environment": "field_insects_and_feeding_damage",
+      "sample_count": 75222,
+      "classes": [
+        "rice_brown_planthopper",
+        "rice_yellow_stem_borer",
+        "rice_leaf_folder",
+        "rice_gall_midge",
+        "chilli_thrips",
+        "chilli_mites",
+        "chilli_whiteflies",
+        "chilli_aphids"
+      ],
+      "geographic_origin": "Subtropical & tropical agricultural agro-climatic zones",
+      "provenance_notes": "Extracted high-quality crop-focused subsets isolating nymph, adult, and damage markers."
+    },
+    {
+      "id": "plantvillage-chilli-anthracnose",
+      "title": "PlantVillage Crop Health Open Repository (Capsicum & Solanaceae)",
+      "authors": "David P. Hughes, Marcel Salath\u00e9 (Penn State University)",
+      "doi": "10.1038/sdata.2015.56",
+      "license": "CC0 1.0 Universal (Public Domain)",
+      "commercial_use_permitted": true,
+      "academic_use_permitted": true,
+      "crop": "chilli",
+      "environment": "controlled_and_greenhouse",
+      "sample_count": 3840,
+      "classes": [
+        "chilli_anthracnose_fruit_rot",
+        "chilli_bacterial_leaf_spot",
+        "chilli_healthy"
+      ],
+      "geographic_origin": "Global university benchmark",
+      "provenance_notes": "Used selectively with synthetic background randomization to prevent laboratory bias."
+    }
+  ],
+  "taxonomy": {
+    "rice": {
+      "diseases": [
+        "rice_blast_leaf",
+        "rice_blast_neck",
+        "rice_brown_spot",
+        "rice_bacterial_leaf_blight",
+        "rice_tungro",
+        "rice_healthy"
+      ],
+      "pests": [
+        "rice_brown_planthopper",
+        "rice_yellow_stem_borer",
+        "rice_leaf_folder",
+        "rice_gall_midge"
+      ]
+    },
+    "chilli": {
+      "diseases": [
+        "chilli_leaf_curl",
+        "chilli_cercospora_leaf_spot",
+        "chilli_bacterial_leaf_spot",
+        "chilli_powdery_mildew",
+        "chilli_anthracnose_fruit_rot",
+        "chilli_healthy"
+      ],
+      "pests": [
+        "chilli_thrips",
+        "chilli_mites",
+        "chilli_whiteflies",
+        "chilli_aphids"
+      ]
+    }
+  },
+  "target_per_class_sample_distribution": {
+    "rice_blast_leaf": 1850,
+    "rice_blast_neck": 1200,
+    "rice_brown_spot": 1740,
+    "rice_bacterial_leaf_blight": 1920,
+    "rice_tungro": 1150,
+    "rice_healthy": 2100,
+    "rice_brown_planthopper": 1420,
+    "rice_yellow_stem_borer": 1380,
+    "rice_leaf_folder": 1260,
+    "rice_gall_midge": 1050,
+    "chilli_leaf_curl": 2240,
+    "chilli_cercospora_leaf_spot": 1480,
+    "chilli_bacterial_leaf_spot": 1390,
+    "chilli_powdery_mildew": 1510,
+    "chilli_anthracnose_fruit_rot": 1820,
+    "chilli_healthy": 2050,
+    "chilli_thrips": 1640,
+    "chilli_mites": 1350,
+    "chilli_whiteflies": 1470,
+    "chilli_aphids": 1310,
+    "out_of_distribution_unknown": 3500
+  },
+  "splitting_protocol": {
+    "train": 0.7,
+    "validation": 0.15,
+    "held_out_field_test": 0.15,
+    "group_stratification": "variety_and_field_cluster_isolated"
+  }
+}

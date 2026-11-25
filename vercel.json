@@ -1,0 +1,36 @@
+{
+  "buildCommand": "npm run build",
+  "redirects": [
+    {
+      "source": "/download/app-release.apk",
+      "destination": "https://github.com/Ayubshaik01/remix-of-remix-of-make-it-great/releases/download/v1.0.0/kisanai-offline-ai.apk",
+      "permanent": false
+    },
+    {
+      "source": "/download/kisanai.apk",
+      "destination": "https://github.com/Ayubshaik01/remix-of-remix-of-make-it-great/releases/download/v1.0.0/kisanai-offline-ai.apk",
+      "permanent": false
+    },
+    {
+      "source": "/download/kisanai-offline.apk",
+      "destination": "https://github.com/Ayubshaik01/remix-of-remix-of-make-it-great/releases/download/v1.0.0/kisanai-offline-ai.apk",
+      "permanent": false
+    },
+    {
+      "source": "/download-apk",
+      "destination": "https://github.com/Ayubshaik01/remix-of-remix-of-make-it-great/releases/download/v1.0.0/kisanai-offline-ai.apk",
+      "permanent": false
+    },
+    {
+      "source": "/api/download-apk",
+      "destination": "https://github.com/Ayubshaik01/remix-of-remix-of-make-it-great/releases/download/v1.0.0/kisanai-offline-ai.apk",
+      "permanent": false
+    },
+    {
+      "source": "/kisanai.apk",
+      "destination": "https://github.com/Ayubshaik01/remix-of-remix-of-make-it-great/releases/download/v1.0.0/kisanai-offline-ai.apk",
+      "permanent": false
+    }
+  ]
+}
+
